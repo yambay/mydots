@@ -3,13 +3,8 @@
 
 autoload -Uz promptinit
 promptinit
-#prompt adam1
 setopt PROMPT_SUBST
 export PS1="%d/ > "
-#PS1="%n@%m:%~/ > "
-#PS2="> "
-
-
 
 setopt histignorealldups sharehistory
 
@@ -52,10 +47,10 @@ alias gst="clear && git status"
 # standard linux commands
 alias ..='cd ..'
 alias l='ls -lah --color=auto'
+alias ll='l'
 alias h='history'
 alias df='df -H'
 alias du='du -ch'
-
 
 
 # GIT prompt infos
@@ -129,5 +124,4 @@ git_info() {
 
 # Use ❯ as the non-root prompt character; # for root
 # Change the prompt character color if the last command had a nonzero exit code
-#PS1='$(ssh_info)%{$fg[green]%}%~%u $(git_info) %(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.❯)%{$reset_color%} '
 PS1='$(ssh_info)%{$fg[green]%}%~%u $(git_info)%(?.%{$fg[blue]%}.%{$fg[red]%})%(!.#.>)%{$reset_color%} '
