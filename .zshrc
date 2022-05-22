@@ -51,7 +51,9 @@ alias ll='l'
 alias h='history'
 alias df='df -H'
 alias du='du -ch'
-
+alias c='clear'
+alias aud='sudo apt update'
+alias aug='sudo apt upgrade'
 
 # GIT prompt infos
 setopt prompt_subst
