@@ -76,14 +76,9 @@ alias c='clear'
 
 
 # apt update/upgrade commands
-if command -v apt &> /dev/null
-then 
-  alias aud='sudo apt update'
-  alias aug='sudo apt upgrade'
-  alias aul='apt list --upgradable'
-else
-  alias {aud,aug,aul}='echo "No apt, forget it"'
-fi
+alias aud='sudo apt update'
+alias aug='sudo apt upgrade'
+alias aul='apt list --upgradable'
 
 # GIT prompt infos
 setopt prompt_subst
