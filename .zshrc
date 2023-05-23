@@ -48,7 +48,8 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 alias ga="git add ."
 alias gc="git commit -m "
 alias gs="clear && git status"
-alias gp="git push"
+alias gps="git push"
+alias gpl="git pull"
 
 # standard linux commands
 alias ..='cd ..'
