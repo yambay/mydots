@@ -41,8 +41,10 @@ source $ZSH_SETTINGS/completion.zsh
 
 
 # git aliases
+alias g="git"
 alias ga="git add ."
 alias gc="git commit -m "
+alias gl="git log"
 alias gs="git status"
 alias gps="git push"
 alias gpl="git pull"
@@ -55,6 +57,15 @@ alias h='history'
 alias df='df -H'
 alias du='du -ch'
 alias c='clear'
+
+# Docker commands
+alias d='docker'
+alias dr='docker run'
+alias di='docker image'
+alias dp='docker ps'
+
+# Kubernetes commands
+alias k='kubectl'
 
 
 # apt update/upgrade commands
