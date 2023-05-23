@@ -2,7 +2,13 @@
 
 # Sources:
 # 1. https://ianyepan.github.io/posts/moving-away-from-ohmyzsh/
+# 2. https://dev.to/rossijonas/how-to-set-up-history-based-autocompletion-in-zsh-k7o
 
+
+# Turn off all beeps
+unsetopt BEEP
+# Turn off autocomplete beeps
+unsetopt LIST_BEEP
 
 autoload -Uz promptinit
 promptinit
@@ -34,6 +40,14 @@ setopt hist_find_no_dups
 autoload -Uz compinit
 compinit
 
+
+# autocompletion using arrow keys (based on history)
+bindkey '\e[A' history-search-backward
+bindkey '\e[B' history-search-forward
+bindkey '^I'   complete-word       # tab          | complete
+bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
+
+
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -42,7 +56,6 @@ zstyle ':completion:*' menu select=2
 if whence dircolors >/dev/null; then
   eval "$(dircolors -b)"
   zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-  #alias ls='ls --color'
 else
   export CLICOLOR=1
   zstyle ':completion:*:default' list-colors ''
@@ -54,7 +67,6 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
-
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
