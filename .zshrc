@@ -47,10 +47,10 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # git aliases
-alias ginit="git init ."
-alias gadd="git add ."
+alias ga="git add ."
 alias gc="git commit -m "
-alias gst="clear && git status"
+alias gs="clear && git status"
+alias gp="git push"
 
 # standard linux commands
 alias ..='cd ..'
