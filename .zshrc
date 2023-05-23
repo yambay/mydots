@@ -37,17 +37,14 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-source $ZSH_SETTINGS/completion.zsh
-
-
 # git aliases
-alias g="git"
-alias ga="git add ."
-alias gc="git commit -m "
-alias gl="git log"
-alias gs="git status"
-alias gps="git push"
-alias gpl="git pull"
+alias g='git'
+alias ga='git add .'
+alias gc='git commit -m '
+alias gl='git log'
+alias gs='git status'
+alias gps='git push'
+alias gpl='git pull'
 
 # standard linux commands
 alias ..='cd ..'
@@ -67,11 +64,11 @@ alias dp='docker ps'
 # Kubernetes commands
 alias k='kubectl'
 
-
-# apt update/upgrade commands
+# apt commands
 alias aud='sudo apt update'
 alias aug='sudo apt upgrade'
 alias aul='apt list --upgradable'
 
+source $ZSH_SETTINGS/completion.zsh
 source $ZSH_SETTINGS/git.zsh
 
