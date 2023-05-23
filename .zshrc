@@ -51,7 +51,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # git aliases
 alias ga="git add ."
 alias gc="git commit -m "
-alias gs="clear && git status"
+alias gs="git status"
 alias gps="git push"
 alias gpl="git pull"
 
@@ -63,10 +63,17 @@ alias h='history'
 alias df='df -H'
 alias du='du -ch'
 alias c='clear'
+
+
 # apt update/upgrade commands
-alias aud='sudo apt update'
-alias aug='sudo apt upgrade'
-alias aul='apt list --upgradable'
+if command -v apt &> /dev/null
+then 
+  alias aud='sudo apt update'
+  alias aug='sudo apt upgrade'
+  alias aul='apt list --upgradable'
+else
+  alias {aud,aug,aul}='echo "No apt, forget it"'
+fi
 
 # GIT prompt infos
 setopt prompt_subst
