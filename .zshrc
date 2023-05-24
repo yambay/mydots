@@ -23,6 +23,7 @@ bindkey -e
 # Define bindigs for "pos1/home" and "end" buttons
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
+bindkey "\e[3~" delete-char
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history
 # No duplicate history when reverse-searching my commands
