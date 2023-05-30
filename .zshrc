@@ -38,14 +38,26 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+
+# Brew aliases
+alias b='brew'
+alias bud='brew update'
+alias bug='brew upgrade'
+alias bo='brew outdated -g'
+
+
 # git aliases
 alias g='git'
 alias ga='git add .'
+alias gb='git branch'
 alias gc='git commit -m '
+alias gf='git fetch'
 alias gl='git log'
-alias gs='git status'
 alias gps='git push'
 alias gpl='git pull'
+alias grb='git rebase'
+alias grs='git reset'
+alias gs='git status'
 
 # standard linux commands
 alias ..='cd ..'
