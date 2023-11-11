@@ -1,10 +1,21 @@
 # Set up the prompt
 
 # Sources:
+# 0. https://thevaluable.dev/zsh-install-configure-mouseless
 # 1. https://ianyepan.github.io/posts/moving-away-from-ohmyzsh/
 # 2. https://dev.to/rossijonas/how-to-set-up-history-based-autocompletion-in-zsh-k7o
 
-export ZSH_SETTINGS=$HOME/mydots
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
+export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export ZSH_SETTINGS=$HOME/mydots/zsh
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
+unsetopt HIST_SAVE_NO_DUPS       # Write a duplicate event to the history file
 
 # Turn off all beeps
 unsetopt BEEP
@@ -39,49 +50,10 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 
-# Brew aliases
-alias b='brew'
-alias bud='brew update'
-alias bug='brew upgrade'
-alias bo='brew outdated -g'
-
-
-# git aliases
-alias g='git'
-alias ga='git add .'
-alias gb='git branch'
-alias gc='git commit -m '
-alias gf='git fetch'
-alias gl='git log'
-alias gps='git push'
-alias gpl='git pull'
-alias grb='git rebase'
-alias grs='git reset'
-alias gs='git status'
-
-# standard linux commands
-alias ..='cd ..'
-alias l='ls -lah --color=auto'
-alias ll='l'
-alias h='history 1'
-alias df='df -H'
-alias du='du -ch'
-alias c='clear'
-
-# Docker commands
-alias d='docker'
-alias dr='docker run'
-alias di='docker image'
-alias dp='docker ps'
-
-# Kubernetes commands
-alias k='kubectl'
-
-# apt commands
-alias aud='sudo apt update'
-alias aug='sudo apt upgrade'
-alias aul='apt list --upgradable'
+# Bind aliases
+source $ZSH_SETTINGS/aliases.zsh
 
 source $ZSH_SETTINGS/completion.zsh
-source $ZSH_SETTINGS/git.zsh
 
+# Add Git information to the prompt (and activate prompt config)
+source $ZSH_SETTINGS/vcs_info.zsh
