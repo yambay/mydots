@@ -1,5 +1,3 @@
-# Set up the prompt
-
 # Sources:
 # 0. https://thevaluable.dev/zsh-install-configure-mouseless
 # 1. https://ianyepan.github.io/posts/moving-away-from-ohmyzsh/
@@ -11,8 +9,8 @@ export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_SETTINGS=$HOME/mydots/zsh
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+export EDITOR="vim"
+export VISUAL="vim"
 
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 unsetopt HIST_SAVE_NO_DUPS       # Write a duplicate event to the history file
@@ -36,11 +34,11 @@ bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "\e[3~" delete-char
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history
-# No duplicate history when reverse-searching my commands
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.zsh_history
+HISTFILE=~/.cache/.zsh_history	# the path of the history file
+setopt HIST_SAVE_NO_DUPS	# Do not write a duplicate event to the history file.
+unsetopt HIST_SAVE_NO_DUPS	# Write a duplicate event to the history file
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
@@ -49,11 +47,6 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-
-# Bind aliases
-source $ZSH_SETTINGS/aliases.zsh
-
-source $ZSH_SETTINGS/completion.zsh
-
-# Add Git information to the prompt (and activate prompt config)
-source $ZSH_SETTINGS/vcs_info.zsh
+source $ZSH_SETTINGS/aliases.zsh	# bind aliases
+source $ZSH_SETTINGS/completion.zsh	# activate completion settings
+source $ZSH_SETTINGS/vcs_info.zsh	# Add Git information to the prompt and activate prompt config
