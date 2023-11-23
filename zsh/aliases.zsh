@@ -21,7 +21,7 @@ alias gps='git push'
 alias gpl='git pull'
 alias grb='git rebase'
 alias grs='git reset'
-alias gs='git status'
+alias gst='git status'
 alias gsw='git switch'
 
 # standard unix commands
