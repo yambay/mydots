@@ -50,3 +50,8 @@ setopt hist_find_no_dups
 source $ZSH_SETTINGS/aliases.zsh	# bind aliases
 source $ZSH_SETTINGS/completion.zsh	# activate completion settings
 source $ZSH_SETTINGS/vcs_info.zsh	# Add Git information to the prompt and activate prompt config
+export PATH="/usr/local/sbin:$PATH"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
