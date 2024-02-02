@@ -47,11 +47,12 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+fpath=(/home/ilyas/.config/zsh/completions $fpath)
 source $ZSH_SETTINGS/aliases.zsh	# bind aliases
 source $ZSH_SETTINGS/completion.zsh	# activate completion settings
 source $ZSH_SETTINGS/vcs_info.zsh	# Add Git information to the prompt and activate prompt config
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/opt/crc-install:/opt/intellij/bin:/usr/local/sbin:$PATH"
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+#source <(ng completion script)

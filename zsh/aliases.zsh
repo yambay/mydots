@@ -42,10 +42,16 @@ alias dp='docker ps'
 # Kubernetes commands
 alias k='kubectl'
 
+# IntelliJ IDEA
+alias idea='/opt/intellij/bin/idea.sh > /dev/null 2>&1 &'
+
 # add Debian/Ubuntu specific aliases
 if command -v apt-get > /dev/null; then
 	# apt commands
 	alias aud='sudo apt update'
 	alias aug='sudo apt upgrade'
 	alias aul='apt list --upgradable'
+	alias aar='sudo apt autoremove'
+	alias ai='sudo apt install'
+	alias as='apt search'
 fi
