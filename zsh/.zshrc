@@ -9,8 +9,11 @@ export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_SETTINGS=$HOME/mydots/zsh
 
+# use 256 color terminal
+export TERM=xterm-256color
+
 export EDITOR="vim"
-export VISUAL="vim"
+export VISUAL="$EDITOR"
 
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 unsetopt HIST_SAVE_NO_DUPS       # Write a duplicate event to the history file
@@ -51,8 +54,4 @@ fpath=(/home/ilyas/.config/zsh/completions $fpath)
 source $ZSH_SETTINGS/aliases.zsh	# bind aliases
 source $ZSH_SETTINGS/completion.zsh	# activate completion settings
 source $ZSH_SETTINGS/vcs_info.zsh	# Add Git information to the prompt and activate prompt config
-export PATH="/opt/crc-install:/opt/intellij/bin:/usr/local/sbin:$PATH"
 
-
-# Load Angular CLI autocompletion.
-#source <(ng completion script)

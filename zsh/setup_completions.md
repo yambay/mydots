@@ -7,5 +7,5 @@ crc completion zsh > /usr/local/share/zsh/site-functions/_crc
 ```zsh
 $ kubectl completion zsh > "${fpath[1]}/_kubectl"
 $ rustup completions zsh > "${fpath[1]}/_cargo"
+$ kind completion zsh > "${fpath[1]}/_kind"
 ```
-
