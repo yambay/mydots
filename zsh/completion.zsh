@@ -33,16 +33,16 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-if ! command -v kubectl 2>&1 >/dev/null
+if command -v kubectl 2>&1 >/dev/null
 then
     kubectl completion zsh > "${fpath[1]}/_kubectl"
 fi
 
-if ! command -v rustup 2>&1 >/dev/null
+if command -v rustup 2>&1 >/dev/null
 then
     rustup completions zsh > "${fpath[1]}/_cargo"
 fi
-if ! command -v kind 2>&1 >/dev/null
+if command -v kind 2>&1 >/dev/null
 then
     kind completion zsh > "${fpath[1]}/_kind"
 fi
