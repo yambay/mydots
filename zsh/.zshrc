@@ -50,7 +50,11 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-fpath=(/home/ilyas/.config/zsh/completions $fpath)
+if [[ $(uname) == "Darwin" ]]; then
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
+else 
+    fpath=(/Users/ilyas/.config/zsh/completions $fpath)
+fi
 source $ZSH_SETTINGS/aliases.zsh	# bind aliases
 source $ZSH_SETTINGS/completion.zsh	# activate completion settings
 source $ZSH_SETTINGS/vcs_info.zsh	# Add Git information to the prompt and activate prompt config

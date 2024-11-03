@@ -46,4 +46,7 @@ if command -v kind 2>&1 >/dev/null
 then
     kind completion zsh > "${fpath[1]}/_kind"
 fi
-
+if command -v crc 2>&1 >/dev/null
+then
+    crc completion zsh > "${fpath[1]}/_crc"
+fi
