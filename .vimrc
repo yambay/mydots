@@ -8,3 +8,5 @@ autocmd FileType yaml,yml setlocal ts=2 sts=2 sw=2 et ai	" yaml configuration: t
 autocmd FileType json setlocal ts=4 sts=4 sw=4 et ai 		" json configuration: tab -> 4 spaces
 " set colorcolumn=80 						" adds a vertical column at position 80
 set cursorcolumn " activate a column at a cursor position
+
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
