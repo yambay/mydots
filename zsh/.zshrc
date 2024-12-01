@@ -53,7 +53,7 @@ setopt hist_find_no_dups
 if [[ $(uname) == "Darwin" ]]; then
     fpath=(/usr/local/share/zsh/site-functions $fpath)
 else 
-    fpath=(/Users/ilyas/.config/zsh/completions $fpath)
+    fpath=($HOME/.config/zsh/completions $fpath)
 fi
 source $ZSH_SETTINGS/aliases.zsh	# bind aliases
 source $ZSH_SETTINGS/completion.zsh	# activate completion settings
