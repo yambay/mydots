@@ -50,3 +50,8 @@ if command -v crc 2>&1 >/dev/null
 then
     crc completion zsh > "${fpath[1]}/_crc"
 fi
+
+if command -v podman 2>&1 >/dev/null
+then
+    podman completion zsh > "${fpath[1]}/_podman"
+fi
