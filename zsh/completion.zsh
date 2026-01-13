@@ -55,3 +55,8 @@ if command -v podman 2>&1 >/dev/null
 then
     podman completion zsh > "${fpath[1]}/_podman"
 fi
+
+if command -v ng 2>&1 >/dev/null
+then
+    ng completion script > "${fpath[1]}/_angular"
+fi
