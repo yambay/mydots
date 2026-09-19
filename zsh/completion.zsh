@@ -1,9 +1,9 @@
 # Setting for autocompletion
 
 # Use modern completion system
-autoload -Uz compinit
-compinit
-
+mkdir -p ~/.config/zsh/completions
+fpath=(~/.config/zsh/completions $fpath)
+autoload -Uz compinit && compinit
 
 # autocompletion using arrow keys (based on history)
 bindkey '\e[A' history-search-backward

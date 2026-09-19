@@ -8,6 +8,7 @@ export XDG_DATA_HOME="$XDG_CONFIG_HOME/local/share"
 export XDG_CACHE_HOME="$XDG_CONFIG_HOME/cache"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_SETTINGS=$HOME/mydots/zsh
+export PATH="/opt/homebrew/opt/openjdk@25/bin:$PATH"
 
 # use 256 color terminal
 export TERM=xterm-256color

@@ -39,6 +39,10 @@ alias dr='docker run'
 alias di='docker image'
 alias dp='docker ps'
 
+# Podman commands
+alias p="podman"
+#alias docker="podman"
+
 # Kubernetes commands
 alias k='kubectl'
 
