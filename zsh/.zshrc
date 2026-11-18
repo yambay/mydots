@@ -10,6 +10,13 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_SETTINGS=$HOME/mydots/zsh
 export PATH="/opt/homebrew/opt/openjdk@25/bin:$PATH"
 
+# Eingetragen am 13.11.2026 beim Einrichten von Colima
+export DOCKER_HOST="unix://${HOME}/.config/colima/default/docker.sock"
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+
+# Brew config
+export HOMEBREW_NO_ENV_HINTS=1
+
 # use 256 color terminal
 export TERM=xterm-256color
 
