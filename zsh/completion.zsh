@@ -60,3 +60,8 @@ if command -v ng 2>&1 >/dev/null
 then
     ng completion script > "${fpath[1]}/_angular"
 fi
+
+if command -v colima 2>&1 >/dev/null
+then
+    colima completion zsh > "${fpath[1]}/_colima"
+fi
