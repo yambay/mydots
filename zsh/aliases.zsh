@@ -1,8 +1,7 @@
 # Set up useful aliases
 
-# add Mac specific aliases
-if [[ $(uname) == "Darwin" ]]; then
-	# Brew aliases
+# Brew aliases (wherever Homebrew is installed: macOS, Linuxbrew)
+if (( $+commands[brew] )); then
 	alias b='brew'
 	alias bud='brew update'
 	alias bug='brew upgrade'
@@ -26,8 +25,11 @@ alias gsw='git switch'
 
 # standard unix commands
 alias ..='cd ..'
-alias l='ls -lah --color=auto'
-alias ll='l'
+if ls --color=auto / >/dev/null 2>&1; then
+	alias l='ls -lah --color=auto'	# GNU ls (Linux)
+else
+	alias l='ls -lahG'	# BSD ls (macOS)
+fi
 alias h='history 1'
 alias df='df -H'
 alias du='du -ch'
@@ -41,13 +43,14 @@ alias dp='docker ps'
 
 # Podman commands
 alias p="podman"
-#alias docker="podman"
 
 # Kubernetes commands
 alias k='kubectl'
 
 # IntelliJ IDEA
-alias idea='/opt/intellij/bin/idea.sh > /dev/null 2>&1 &'
+if [[ -x /opt/intellij/bin/idea.sh ]]; then
+	alias idea='/opt/intellij/bin/idea.sh > /dev/null 2>&1 &'
+fi
 
 # add Debian/Ubuntu specific aliases
 if command -v apt-get > /dev/null; then
