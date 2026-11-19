@@ -71,4 +71,4 @@ source $ZSH_SETTINGS/completion.zsh	# activate completion settings
 source $ZSH_SETTINGS/vcs_info.zsh	# Add Git information to the prompt and activate prompt config
 
 # Machine-specific settings and lines appended by installers (nvm, sdkman, ...); not versioned
-[[ -r ~/.zshrc.local ]] && source ~/.zshrc.local
+if [[ -r ~/.zshrc.local ]]; then source ~/.zshrc.local; fi
