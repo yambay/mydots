@@ -1,6 +1,6 @@
 # mydots
 
-Personal dotfiles for zsh and vim. Works on macOS and Ubuntu.
+Personal dotfiles for zsh, vim and GitHub Copilot CLI. Works on macOS and Ubuntu.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ git clone git@github.com:yambay/mydots.git ~/mydots
 chsh -s "$(command -v zsh)"   # Ubuntu starts bash by default; log out and in afterwards
 ```
 
-The script symlinks `~/.vimrc`, `~/.zshenv` and `~/.zshrc` to this repository. Existing files, and symlinks pointing elsewhere, are backed up as `*.bak.<timestamp>`. Running it again is safe. It prints a hint if your login shell is not zsh.
+The script symlinks `~/.vimrc`, `~/.zshenv`, `~/.zshrc`, `~/.copilot/copilot-instructions.md` and `~/.copilot/settings.json` (or the same files in `$COPILOT_HOME`) to this repository. Existing files, and symlinks pointing elsewhere, are backed up as `*.bak.<timestamp>`. Running it again is safe. It prints a hint if your login shell is not zsh.
 
 ## Structure
 
@@ -40,6 +40,8 @@ The script symlinks `~/.vimrc`, `~/.zshenv` and `~/.zshrc` to this repository. E
 | `zsh/aliases.zsh` | Aliases (macOS/Ubuntu specific ones are set per OS) |
 | `zsh/completion.zsh` | Completion settings and generated completions |
 | `zsh/vcs_info.zsh` | Prompt with Git status (`*` modified, `+` staged, `?` untracked; `vcs-status-toggle` switches the checks off in large repos) |
+| `copilot/copilot-instructions.md` | Personal custom instructions for GitHub Copilot CLI (all repositories) |
+| `copilot/settings.json` | User settings for GitHub Copilot CLI |
 
 ## Local settings
 

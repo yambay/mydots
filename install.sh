@@ -24,6 +24,11 @@ link "$DOTS_DIR/.vimrc" "$HOME/.vimrc"
 link "$DOTS_DIR/zsh/.zshenv" "$HOME/.zshenv"
 link "$DOTS_DIR/zsh/.zshrc" "$HOME/.zshrc"
 
+COPILOT_DIR="${COPILOT_HOME:-$HOME/.copilot}"
+mkdir -p "$COPILOT_DIR"
+link "$DOTS_DIR/copilot/copilot-instructions.md" "$COPILOT_DIR/copilot-instructions.md"
+link "$DOTS_DIR/copilot/settings.json" "$COPILOT_DIR/settings.json"
+
 if ! command -v zsh >/dev/null 2>&1; then
     echo "Note: zsh is not installed (Ubuntu: sudo apt install zsh vim git)."
 elif [[ "$(basename "${SHELL:-}")" != "zsh" ]]; then
